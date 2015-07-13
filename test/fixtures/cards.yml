@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  type: 
+  expiration_month: 1
+  expiration: 
+
+two:
+  number: MyString
+  type: 
+  expiration_month: 1
+  expiration: 
