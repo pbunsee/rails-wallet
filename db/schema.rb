@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713165826) do
+ActiveRecord::Schema.define(version: 20150713211518) do
 
   create_table "cards", force: true do |t|
     t.string   "number"
@@ -33,10 +33,11 @@ ActiveRecord::Schema.define(version: 20150713165826) do
     t.string   "email"
     t.string   "fname"
     t.string   "lname"
-    t.decimal  "balance"
+    t.decimal  "balance",    default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
+    t.text     "password"
   end
 
 end
