@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.create user_params
     if @user.valid?
       flash[:notice] = "Thanks for signing up"
+      session[:user_id] = @user.id
       redirect_to users_path
     else
       flash[:alert] = "There was a problem."
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
                                  :lname,
                                  :password,
                                  :email,
+                                 :phone,
                                  :password_confirmation)
   end
 end

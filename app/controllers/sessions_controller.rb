@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 
+  def new
+    session[:user_id] = nil
+  end
+
   def create
     user = User.find_by_email(params[:email])
     if user
@@ -15,8 +19,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    user = User.find params[:id]
-    user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Logged Out"
+    redirect_to root_path
   end
 
 end

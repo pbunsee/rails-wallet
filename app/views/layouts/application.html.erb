@@ -9,7 +9,7 @@
 <body>
 
 <%= render 'shared/flashes' %>
-<%= link_to 'Logout' if current_user %>
+<%= link_to 'Logout', session_path(current_user.id), method: :delete if current_user %>
 
 <%= yield %>
 
