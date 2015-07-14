@@ -1,7 +1,9 @@
 Wallet::Application.routes.draw do
   resources :cards
 
-  resources :users
+  resources :users do
+    resources :cards
+  end
 
   resources :sessions
 

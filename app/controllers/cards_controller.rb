@@ -1,6 +1,11 @@
 class CardsController < ApplicationController
   def index
-    @cards = Card.all
+    if params[:user_id].present?
+      @user = User.find params[:user_id]
+      @cards = @user.cards
+    else
+      @cards = Card.all
+    end
   end
 
   def new
