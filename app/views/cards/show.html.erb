@@ -1,4 +1,4 @@
-<div class='card'>
+<div class=<%= "card #{@card.card_type.downcase.gsub(/\s/,'')}"%> >
   <ul class='card-attributes'>
     <li> <%= @card.card_type %> </li>
     <li> <%= @card.number %> </li>

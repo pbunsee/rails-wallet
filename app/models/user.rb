@@ -13,6 +13,17 @@ class User < ActiveRecord::Base
   has_many :user_cards
   has_many :cards, through: :user_cards
 
+  before_destroy :destroy_solely_owned_cards
+
+  def destroy_solely_owned_cards
+    all_my_cards = self.cards
+    owned_cards = all_my_cards.select do |card|
+                    card.users.length == 1
+                  end
+    owned_cards.each &:destroy!
+  end
+
+
   def full_name
     fname + ' ' + lname
   end

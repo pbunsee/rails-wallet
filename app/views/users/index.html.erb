@@ -2,6 +2,7 @@
   <div>
     <%= user.full_name %>
     <%= link_to 'Cards', user_cards_path(user) %>
+    <%= link_to 'Edit', edit_user_path(user) %>
   </div>
 
 <% end %>
