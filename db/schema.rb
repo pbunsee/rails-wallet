@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713211518) do
+ActiveRecord::Schema.define(version: 20150714141711) do
 
   create_table "cards", force: true do |t|
     t.string   "number"
-    t.string   "type"
+    t.string   "card_type"
     t.integer  "expiration_month"
     t.integer  "expiration_year"
     t.datetime "created_at"
