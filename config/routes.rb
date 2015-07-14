@@ -1,5 +1,11 @@
 Wallet::Application.routes.draw do
-  resources :cards
+
+  resources :cards do
+    collection do
+      get 'expired'
+    end
+  end
+
 
   resources :users do
     resources :cards

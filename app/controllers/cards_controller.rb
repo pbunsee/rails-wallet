@@ -29,6 +29,11 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
+  def expired
+    @cards = Card.expired
+    render :index
+  end
+
 
   private
 
