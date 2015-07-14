@@ -1,5 +1,7 @@
 Wallet::Application.routes.draw do
 
+  get '/wat' => 'vis#index'
+
   resources :cards do
     collection do
       get 'expired'
