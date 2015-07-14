@@ -7,6 +7,9 @@ class Card < ActiveRecord::Base
 
   before_save :set_card_type
 
+  validates :users, presence: true
+
+
   def set_card_type
     first_num = self.number[0]
     self.card_type = case first_num
