@@ -1,10 +1,4 @@
-<% if @card.errors.any? %>
-  <ul>
-    <% @card.errors.full_messages.each do |msg| %>
-      <li> <%= msg %> </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= errors_for(@card) %>
 
 <%= form_for @card do |f| %>
   <%= f.label :number %>
