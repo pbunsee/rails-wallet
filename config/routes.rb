@@ -6,6 +6,7 @@ Wallet::Application.routes.draw do
     end
   end
 
+  post '/share-card' => 'user_cards#create', as: 'share_card'
 
   resources :users do
     resources :cards
