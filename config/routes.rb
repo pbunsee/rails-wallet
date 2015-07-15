@@ -1,5 +1,7 @@
 Wallet::Application.routes.draw do
 
+  get '/cookie-example' => 'cookie_example#index'
+
   resources :cards do
     collection do
       get 'expired'
