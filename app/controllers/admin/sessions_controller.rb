@@ -8,8 +8,7 @@ class Admin::SessionsController < ApplicationController
     if @admin.present?
       if @admin.password == params[:password]
         session[:admin_id] = @admin.id
-        raise "Success!"
-        #redirect_to admin_cards_path
+        redirect_to admin_cards_path
       else
         flash[:alert] = 'Wrong password'
         redirect_to new_admin_session_path

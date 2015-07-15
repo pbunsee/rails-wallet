@@ -1,5 +1,10 @@
 Wallet::Application.routes.draw do
 
+  namespace :admin do
+    resources :sessions, only: [:create, :new, :destroy]
+    resources :cards, only: [:index, :destroy]
+  end
+
   get '/cookie-example' => 'cookie_example#index'
 
   resources :cards do
