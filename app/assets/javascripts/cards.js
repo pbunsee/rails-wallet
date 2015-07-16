@@ -53,4 +53,24 @@ $(document).ready(function() {
     $('#first').text(e.elapsed);
   });
 
+  //////// SECOND EXAMPLE ////////
+
+  var greenSquareTime = 0;
+  var greenSquareTimer;
+
+  function incGreenSquareTime(){
+    greenSquareTime++;
+    $('#green-square-timer').text(greenSquareTime);
+  }
+
+  $('#green-square').on('mouseenter', function(){
+    greenSquareTimer = setInterval(incGreenSquareTime, 1000);
+  });
+
+  $('#green-square').on('mouseleave', function(){
+    greenSquareTime = 0;
+    clearInterval(greenSquareTimer);
+    $('#green-square-timer').text(greenSquareTime);
+  });
+
 });
