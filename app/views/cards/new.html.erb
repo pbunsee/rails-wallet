@@ -2,14 +2,14 @@
 
 <div id='client-side-error'> </div>
 
-<%= form_for @card do |f| %>
+<%= form_for @card, remote: true do |f| %>
   <%= f.label :number %>
   <%= f.text_field :number %>
   <%= f.label :expiration_month %>
   <%= f.select :expiration_month, (1..12) %>
   <%= f.label :expiration_year %>
   <%= f.select :expiration_year, (2015..2029) %>
-  <%= f.submit 'Create Card' %>
+  <%= f.submit 'Create Card', data: {disable_with: "Submitting..."} %>
 <% end %>
 
 <div id='first' style='width:100px; height: 100px; background: red'>
