@@ -16,10 +16,35 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(document).ready(function() {
+function onReady() {
   $('.ajax-test').on('ajax:success', function(e) {
     alert('alert');
     $('body').css('background-color', 'red');
   });
-});
+
+  $('#turbo-test').on('click', function(){
+    alert('hey');
+  });
+}
+
+function doFetchAlert() {
+  alert('fetch');
+}
+
+function doLoadAlert() {
+  alert('load');
+}
+
+function doReceiveAlert() {
+  alert('receive');
+}
+
+function doChangeAlert() {
+  alert('change');
+}
+
+$(document).on('page:change', onReady);
+$(document).on('page:change', doChangeAlert);
+$(document).on('page:fetch', doFetchAlert);
+$(document).on('page:load', doLoadAlert);
+$(document).on('page:receive', doReceiveAlert);

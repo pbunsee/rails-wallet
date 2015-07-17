@@ -10,6 +10,11 @@
 
 <%= link_to "YAY AJAX" , ajax_link_path , remote: true, class: 'ajax-test' %>
 
+
+<br>
+  <a href='#' id="turbo-test">Turbotest</a>
+<br>
+
 <%= render 'shared/flashes' %>
 <%= link_to 'Logout', session_path(current_user.id), method: :delete if current_user %>
 
