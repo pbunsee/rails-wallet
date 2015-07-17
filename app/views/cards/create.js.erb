@@ -1,1 +1,1 @@
-$('body').html('<%= @req_type%> Thanks.');
+$('<%= j render @card %>').hide().prependTo('#cards').slideDown();

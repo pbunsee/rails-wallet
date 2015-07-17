@@ -1,4 +1,8 @@
 
-<% @cards.each do |card| %>
-  <%= render partial: 'card', locals: {card: card} %>
-<% end %>
+<%= render 'card_form' %>
+
+<div id='cards'>
+  <% @cards.each do |card| %>
+    <%= render partial: 'card', locals: {card: card} %>
+  <% end %>
+</div>

@@ -13,6 +13,8 @@
 <%= render 'shared/flashes' %>
 <%= link_to 'Logout', session_path(current_user.id), method: :delete if current_user %>
 
+<br><br>
+
 <%= yield %>
 
 </body>

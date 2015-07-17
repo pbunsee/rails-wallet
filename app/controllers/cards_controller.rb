@@ -15,23 +15,23 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     @card.users << current_user
-    @card.save!
 
     respond_to do |format|
       format.js do
-        @req_type = "I am a javascript request!"
+        @card.save!
       end
-      #format.html do
-      #end
-    end
 
-    #if @card.valid?
-      #@card.save!
-      #redirect_to cards_path
-    #else
-      #flash[:alert] = "There was an error with your submission"
-      #render :new
-    #end
+      format.html do
+        @card.save!
+        if @card.valid?
+          @card.save!
+          redirect_to cards_path
+        else
+          flash[:alert] = "There was an error with your submission"
+          render :new
+        end
+      end
+    end
   end
 
   def show
