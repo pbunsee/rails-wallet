@@ -73,4 +73,8 @@ $(document).ready(function() {
     $('#green-square-timer').text(greenSquareTime);
   });
 
+  $('.delete-card').on('ajax:complete', function(e){
+    $(e.currentTarget).parent().fadeOut();
+  });
+
 });
