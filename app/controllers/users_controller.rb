@@ -53,6 +53,14 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def ajax_test
+    #raise 'Random Error' -- if uncommented, the UJS "ajax:complete"
+    #                        will still fire.  However, "ajax:success" will
+    #                        not.
+    render text: "Hi"
+  end
+
+
   private
 
   def user_params

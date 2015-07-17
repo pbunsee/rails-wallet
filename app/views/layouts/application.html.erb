@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= link_to "YAY AJAX" , ajax_link_path , remote: true, class: 'ajax-test' %>
+
 <%= render 'shared/flashes' %>
 <%= link_to 'Logout', session_path(current_user.id), method: :delete if current_user %>
 

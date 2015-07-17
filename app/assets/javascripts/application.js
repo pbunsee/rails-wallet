@@ -15,3 +15,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('.ajax-test').on('ajax:success', function(e) {
+    alert('alert');
+    $('body').css('background-color', 'red');
+  });
+});

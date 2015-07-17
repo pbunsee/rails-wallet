@@ -7,6 +7,8 @@ Wallet::Application.routes.draw do
 
   get '/cookie-example' => 'cookie_example#index'
 
+  get '/ajax-link-test' => 'users#ajax_test', as: 'ajax_link'
+
   resources :cards do
     collection do
       get 'expired'
