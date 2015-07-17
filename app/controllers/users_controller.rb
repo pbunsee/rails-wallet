@@ -69,6 +69,7 @@ class UsersController < ApplicationController
                                  :password,
                                  :email,
                                  :phone,
+                                 :avatar,
                                  :password_confirmation)
   end
 end

@@ -27,24 +27,14 @@ function onReady() {
   });
 }
 
-function doFetchAlert() {
-  alert('fetch');
+function showLoading() {
+  $('#loading').html('<h1>Loading</h1>').css('color', 'red');
 }
 
-function doLoadAlert() {
-  alert('load');
-}
-
-function doReceiveAlert() {
-  alert('receive');
-}
-
-function doChangeAlert() {
-  alert('change');
+function hideLoading() {
+  $('#loading').empty()
 }
 
 $(document).on('page:change', onReady);
-$(document).on('page:change', doChangeAlert);
-$(document).on('page:fetch', doFetchAlert);
-$(document).on('page:load', doLoadAlert);
-$(document).on('page:receive', doReceiveAlert);
+$(document).on('page:fetch', showLoading);
+$(document).on('page:receive', hideLoading);

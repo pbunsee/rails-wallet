@@ -4,8 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.5'
 gem 'pry-rails'
 
+gem 'aws-sdk'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+gem 'paperclip', '~> 4.3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'

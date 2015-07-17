@@ -11,4 +11,17 @@
   <%= f.submit 'Edit' %>
 <% end %>
 
+<%= image_tag @user.avatar.url %>
+<%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %>
+
+<h1> Add avatar </h1>
+<%= form_for @user, multipart: true do |f| %>
+
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+  <%= f.submit %>
+
+<% end %>
+
 <%= link_to "Delete Account", user_path(@user), method: :delete %>
