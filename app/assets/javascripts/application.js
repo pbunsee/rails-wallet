@@ -17,9 +17,14 @@
 //= require_tree .
 
 function onReady() {
+
   $('.ajax-test').on('ajax:success', function(e) {
     alert('alert');
     $('body').css('background-color', 'red');
+  });
+
+  $('.foo').on('click', function(e) {
+    $(this).css('color', 'red');
   });
 
   $('#turbo-test').on('click', function(){

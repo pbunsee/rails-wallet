@@ -5,6 +5,8 @@ Wallet::Application.routes.draw do
     resources :cards, only: [:index, :destroy]
   end
 
+  delete '/logout' => 'sessions#destroy', as: 'logout'
+
   get '/cookie-example' => 'cookie_example#index'
 
   get '/ajax-link-test' => 'users#ajax_test', as: 'ajax_link'

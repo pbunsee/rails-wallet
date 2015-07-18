@@ -8,9 +8,17 @@
 </head>
 <body>
 
+
 <div id='loading'></div>
 
-<%= link_to "YAY AJAX" , ajax_link_path , remote: true, class: 'ajax-test' %>
+<% unless request.original_url.match(/expired/) %>
+  <%= link_to "YAY AJAX" , ajax_link_path , remote: true, class: 'ajax-test' %>
+<% end %>
+
+<div class='foo'> One </div>
+<div class='foo'> Two </div>
+<div class='foo'> Three </div>
+<div class='foo'> Four </div>
 
 
 <br>
@@ -18,7 +26,8 @@
 <br>
 
 <%= render 'shared/flashes' %>
-<%= link_to 'Logout', session_path(current_user.id), method: :delete if current_user %>
+
+<%= link_to 'Logout', logout_path, method: :delete if current_user %>
 
 <br><br>
 
