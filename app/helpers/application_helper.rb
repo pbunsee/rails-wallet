@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def current_user
     if session[:user_id]
       current_user = User.find(session[:user_id])
@@ -9,6 +10,10 @@ module ApplicationHelper
     if session[:admin_id]
       current_admin = Admin.find(session[:admin_id])
     end
+  end
+
+  def greeting_for(user)
+    "<div class='greeting'>Hello #{user.fname}!</div>".html_safe
   end
 
 end

@@ -15,6 +15,10 @@ Wallet::Application.routes.draw do
     collection do
       get 'expired'
     end
+
+    member do
+      get 'expired'
+    end
   end
 
   post '/share-card' => 'user_cards#create', as: 'share_card'

@@ -32,6 +32,28 @@ class User < ActiveRecord::Base
 
   before_destroy :destroy_solely_owned_cards
 
+  before_create :encrypt_password
+
+  #this line ensures that we can store password
+  #on our user instance, just long enough to
+  #generate the password hash
+  attr_accessor :password
+
+  def encrypt_password
+    self.password_salt = BCrypt::Engine.generate_salt
+    self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+  end
+
+  def self.authenticate(email, password)
+    user = User.where(email: email).first
+
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+  end
+
   def destroy_solely_owned_cards
     all_my_cards = self.cards
     owned_cards = all_my_cards.select do |card|
